@@ -5,45 +5,13 @@ name = "variables1"
 path = "exercises/variables/variables1.rs"
 mode = "compile"
 hint = """
-Hint: The declaration on line 12 is missing a keyword that is needed in Rust
-to create a new variable binding."""
-
-[[exercises]]
-name = "variables2"
-path = "exercises/variables/variables2.rs"
-mode = "compile"
-hint = """
-The compiler message is saying that Rust cannot infer the type that the
-variable binding `x` has with what is given here.
-What happens if you annotate line 7 with a type annotation?
-What if you give x a value?
-What if you do both?
-What type should x be, anyway?
-What if x is the same type as 10? What if it's a different type?"""
-
-[[exercises]]
-name = "variables3"
-path = "exercises/variables/variables3.rs"
-mode = "compile"
-hint = """
 In Rust, variable bindings are immutable by default. But here we're trying
 to reassign a different value to x! There's a keyword we can use to make
 a variable binding mutable instead."""
 
 [[exercises]]
-name = "variables4"
-path = "exercises/variables/variables4.rs"
-mode = "compile"
-hint = """
-Oops! In this exercise, we have a variable binding that we've created on
-line 7, and we're trying to use it on line 8, but we haven't given it a
-value. We can't print out something that isn't there; try giving x a value!
-This is an error that can cause bugs that's very easy to make in any
-programming language -- thankfully the Rust compiler has caught this for us!"""
-
-[[exercises]]
-name = "variables5"
-path = "exercises/variables/variables5.rs"
+name = "variables2"
+path = "exercises/variables/variables2.rs"
 mode = "compile"
 hint = """
 In variables3 we already learned how to make an immutable variable mutable
@@ -57,8 +25,8 @@ https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html#shadowing
 Try to solve this exercise afterwards using this technique."""
 
 [[exercises]]
-name = "variables6"
-path = "exercises/variables/variables6.rs"
+name = "variables3"
+path = "exercises/variables/variables3.rs"
 mode = "compile"
 hint = """
 We know about variables and mutability, but there is another important type of
@@ -76,41 +44,6 @@ https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html#differences
 [[exercises]]
 name = "functions1"
 path = "exercises/functions/functions1.rs"
-mode = "compile"
-hint = """
-This main function is calling a function that it expects to exist, but the
-function doesn't exist. It expects this function to have the name `call_me`.
-It expects this function to not take any arguments and not return a value.
-Sounds a lot like `main`, doesn't it?"""
-
-[[exercises]]
-name = "functions2"
-path = "exercises/functions/functions2.rs"
-mode = "compile"
-hint = """
-Rust requires that all parts of a function's signature have type annotations,
-but `call_me` is missing the type annotation of `num`."""
-
-[[exercises]]
-name = "functions3"
-path = "exercises/functions/functions3.rs"
-mode = "compile"
-hint = """
-This time, the function *declaration* is okay, but there's something wrong
-with the place where we're calling the function."""
-
-[[exercises]]
-name = "functions4"
-path = "exercises/functions/functions4.rs"
-mode = "compile"
-hint = """
-The error message points to line 14 and says it expects a type after the
-`->`. This is where the function's return type should be-- take a look at
-the `is_even` function for an example!"""
-
-[[exercises]]
-name = "functions5"
-path = "exercises/functions/functions5.rs"
 mode = "compile"
 hint = """
 This is a really common error that can be fixed by removing one character.
@@ -227,18 +160,6 @@ https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html#mutable-ref
 name = "primitive_types1"
 path = "exercises/primitive_types/primitive_types1.rs"
 mode = "compile"
-hint = "No hints this time ;)"
-
-[[exercises]]
-name = "primitive_types2"
-path = "exercises/primitive_types/primitive_types2.rs"
-mode = "compile"
-hint = "No hints this time ;)"
-
-[[exercises]]
-name = "primitive_types3"
-path = "exercises/primitive_types/primitive_types3.rs"
-mode = "compile"
 hint = """
 There's a shorthand to initialize Arrays with a certain size that does not
 require you to type in 100 items (but you certainly can if you want!).
@@ -249,8 +170,8 @@ Bonus: what are some other things you could have that would return true
 for `a.len() >= 100`?"""
 
 [[exercises]]
-name = "primitive_types4"
-path = "exercises/primitive_types/primitive_types4.rs"
+name = "primitive_types2"
+path = "exercises/primitive_types/primitive_types2.rs"
 mode = "test"
 hint = """
 Take a look at the Understanding Ownership -> Slices -> Other Slices section of the book:
@@ -264,8 +185,8 @@ reference, take a look at the Deref coercions section of the book:
 https://doc.rust-lang.org/book/ch15-02-deref.html"""
 
 [[exercises]]
-name = "primitive_types5"
-path = "exercises/primitive_types/primitive_types5.rs"
+name = "primitive_types3"
+path = "exercises/primitive_types/primitive_types3.rs"
 mode = "compile"
 hint = """
 Take a look at the Data Types -> The Tuple Type section of the book:
@@ -275,8 +196,8 @@ You'll need to make a pattern to bind `name` and `age` to the appropriate parts
 of the tuple. You can do it!!"""
 
 [[exercises]]
-name = "primitive_types6"
-path = "exercises/primitive_types/primitive_types6.rs"
+name = "primitive_types4"
+path = "exercises/primitive_types/primitive_types4.rs"
 mode = "test"
 hint = """
 While you could use a destructuring `let` for the tuple here, try
@@ -485,44 +406,6 @@ mode = "compile"
 hint = """
 If other functions can return a `Result`, why shouldn't `main`?"""
 
-[[exercises]]
-name = "errorsn"
-path = "exercises/error_handling/errorsn.rs"
-mode = "test"
-hint = """
-First hint: To figure out what type should go where the ??? is, take a look
-at the test helper function `test_with_str`, since it returns whatever
-`read_and_validate` returns and `test_with_str` has its signature fully
-specified.
-
-
-Next hint: There are three places in `read_and_validate` that we call a
-function that returns a `Result` (that is, the functions might fail).
-Apply the `?` operator on those calls so that we return immediately from
-`read_and_validate` if those function calls fail.
-
-
-Another hint: under the hood, the `?` operator calls `From::from`
-on the error value to convert it to a boxed trait object, a Box<dyn error::Error>,
-which is polymorphic-- that means that lots of different kinds of errors
-can be returned from the same function because all errors act the same
-since they all implement the `error::Error` trait.
-Check out this section of the book:
-https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html#a-shortcut-for-propagating-errors-the--operator
-
-
-Another another hint: Note that because the `?` operator returns
-the *unwrapped* value in the `Ok` case, if we want to return a `Result` from
-`read_and_validate` for *its* success case, we'll have to rewrap a value
-that we got from the return value of a `?`ed call in an `Ok`-- this will
-look like `Ok(something)`.
-
-
-Another another another hint: `Result`s must be "used", that is, you'll
-get a warning if you don't handle a `Result` that you get in your
-function. Read more about that in the `std::result` module docs:
-https://doc.rust-lang.org/std/result/#results-must-be-used"""
-
 # Generics
 
 [[exercises]]
@@ -629,46 +512,6 @@ Try mutating the incoming string vector.
 
 Vectors provide suitable methods for adding an element at the end. See
 the documentation at: https://doc.rust-lang.org/std/vec/struct.Vec.html"""
-
-# TESTS
-
-[[exercises]]
-name = "tests1"
-path = "exercises/tests/tests1.rs"
-mode = "test"
-hint = """
-You don't even need to write any code to test -- you can just test values and run that, even
-though you wouldn't do that in real life :) `assert!` is a macro that needs an argument.
-Depending on the value of the argument, `assert!` will do nothing (in which case the test will
-pass) or `assert!` will panic (in which case the test will fail). So try giving different values
-to `assert!` and see which ones compile, which ones pass, and which ones fail :)"""
-
-[[exercises]]
-name = "tests2"
-path = "exercises/tests/tests2.rs"
-mode = "test"
-hint = """
-Like the previous exercise, you don't need to write any code to get this test to compile and
-run. `assert_eq!` is a macro that takes two arguments and compares them. Try giving it two
-values that are equal! Try giving it two arguments that are different! Try giving it two values
-that are of different types! Try switching which argument comes first and which comes second!"""
-
-[[exercises]]
-name = "tests3"
-path = "exercises/tests/tests3.rs"
-mode = "test"
-hint = """
-You can call a function right where you're passing arguments to `assert!` -- so you could do
-something like `assert!(having_fun())`. If you want to check that you indeed get false, you
-can negate the result of what you're doing using `!`, like `assert!(!having_fun())`."""
-
-# TEST 3
-
-[[exercises]]
-name = "quiz3"
-path = "exercises/quiz3.rs"
-mode = "test"
-hint = "No hints this time ;)"
 
 # STANDARD LIBRARY TYPES
 
@@ -946,3 +789,43 @@ This is almost like the `try_from_into` exercise.
 
 If you're having trouble with returning the correct error type, see the
 hints for try_from_into."""
+
+# TESTS
+
+[[exercises]]
+name = "tests1"
+path = "exercises/tests/tests1.rs"
+mode = "test"
+hint = """
+You don't even need to write any code to test -- you can just test values and run that, even
+though you wouldn't do that in real life :) `assert!` is a macro that needs an argument.
+Depending on the value of the argument, `assert!` will do nothing (in which case the test will
+pass) or `assert!` will panic (in which case the test will fail). So try giving different values
+to `assert!` and see which ones compile, which ones pass, and which ones fail :)"""
+
+[[exercises]]
+name = "tests2"
+path = "exercises/tests/tests2.rs"
+mode = "test"
+hint = """
+Like the previous exercise, you don't need to write any code to get this test to compile and
+run. `assert_eq!` is a macro that takes two arguments and compares them. Try giving it two
+values that are equal! Try giving it two arguments that are different! Try giving it two values
+that are of different types! Try switching which argument comes first and which comes second!"""
+
+[[exercises]]
+name = "tests3"
+path = "exercises/tests/tests3.rs"
+mode = "test"
+hint = """
+You can call a function right where you're passing arguments to `assert!` -- so you could do
+something like `assert!(having_fun())`. If you want to check that you indeed get false, you
+can negate the result of what you're doing using `!`, like `assert!(!having_fun())`."""
+
+# TEST 3
+
+[[exercises]]
+name = "testsquiz"
+path = "exercises/quiz3.rs"
+mode = "test"
+hint = "No hints this time ;)"

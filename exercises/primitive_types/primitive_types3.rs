@@ -1,15 +1,12 @@
-// primitive_types3.rs
-// Create an array with at least 100 elements in it where the ??? is.
-// Execute `rustlings hint primitive_types3` for hints!
+// primitive_types5.rs
+// Destructure the `cat` tuple so that the println will work.
+// Execute `rustlings hint primitive_types5` for hints!
 
 // I AM NOT DONE
 
 fn main() {
-    let a = ???
+    let cat = ("Furry McFurson", 3.5);
+    let /* your pattern here */ = cat;
 
-    if a.len() >= 100 {
-        println!("Wow, that's a big array!");
-    } else {
-        println!("Meh, I eat arrays like that for breakfast.");
-    }
+    println!("{} is {} years old.", name, age);
 }

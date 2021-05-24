@@ -1,14 +1,16 @@
-// primitive_types4.rs
-// Get a slice out of Array a where the ??? is so that the test passes.
-// Execute `rustlings hint primitive_types4` for hints!!
+// primitive_types6.rs
+// Use a tuple index to access the second element of `numbers`.
+// You can put the expression for the second element where ??? is so that the test passes.
+// Execute `rustlings hint primitive_types6` for hints!
 
 // I AM NOT DONE
 
 #[test]
-fn slice_out_of_array() {
-    let a = [1, 2, 3, 4, 5];
+fn indexing_tuple() {
+    let numbers = (1, 2, 3);
+    // Replace below ??? with the tuple indexing syntax.
+    let second = ???;
 
-    let nice_slice = ???
-
-    assert_eq!([2, 3, 4], nice_slice)
+    assert_eq!(2, second,
+        "This is not the 2nd number in the tuple!")
 }

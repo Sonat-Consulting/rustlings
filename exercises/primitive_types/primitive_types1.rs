@@ -1,19 +1,15 @@
-// primitive_types1.rs
-// Fill in the rest of the line that has code missing!
-// No hints, there's no tricks, just get used to typing these :)
+// primitive_types3.rs
+// Create an array with at least 100 elements in it where the ??? is.
+// Execute `rustlings hint primitive_types3` for hints!
 
 // I AM NOT DONE
 
 fn main() {
-    // Booleans (`bool`)
+    let a = ???
 
-    let is_morning = true;
-    if is_morning {
-        println!("Good morning!");
-    }
-
-    let // Finish the rest of this line like the example! Or make it be false!
-    if is_evening {
-        println!("Good evening!");
+    if a.len() >= 100 {
+        println!("Wow, that's a big array!");
+    } else {
+        println!("Meh, I eat arrays like that for breakfast.");
     }
 }
