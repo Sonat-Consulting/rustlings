@@ -1,4 +1,4 @@
-// variables5.rs
+// variables2.rs
 // Make me compile! Execute the command `rustlings hint variables5` if you want a hint :)
 
 // I AM NOT DONE
